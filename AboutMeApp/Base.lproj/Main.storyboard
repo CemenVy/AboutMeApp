@@ -38,7 +38,7 @@
                                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="cRl-ci-Hav" kind="presentation" modalPresentationStyle="fullScreen" id="5FZ-LZ-Bdd"/>
+                                                    <segue destination="cRl-ci-Hav" kind="presentation" identifier="" modalPresentationStyle="fullScreen" id="5FZ-LZ-Bdd"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -51,12 +51,18 @@
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Forgot User Name?"/>
+                                                <connections>
+                                                    <action selector="forgotUserNameButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pgn-xY-tDj"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iy8-gL-2zI">
                                                 <rect key="frame" x="188" y="0.0" width="109" height="28"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Forgot Password?"/>
+                                                <connections>
+                                                    <action selector="forgotPasswordButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="RwD-hq-Zry"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -70,6 +76,10 @@
                             <constraint firstItem="VVh-a2-cYJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Xti-gS-yGd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="6wQ-Yz-6PL" id="rWf-oA-fzK"/>
+                        <outlet property="userNameTextField" destination="ZDW-Fq-qIF" id="oAn-th-YH1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,6 +127,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Log out">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle2"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="gtD-Vw-5Ft" kind="unwind" unwindAction="unwindFor:" id="mGF-eK-vDi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nxG-9o-vi1"/>
@@ -129,8 +142,12 @@
                             <constraint firstItem="nxG-9o-vi1" firstAttribute="trailing" secondItem="aM9-XR-jrm" secondAttribute="trailing" constant="20" id="vvN-n8-ur9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greetinglabelTF" destination="1lC-vR-bQB" id="lah-Lm-PWI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ES6-vu-Vlb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="gtD-Vw-5Ft" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="823.66412213740455" y="3.5211267605633805"/>
         </scene>
