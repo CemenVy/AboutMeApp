@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +34,12 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LG-Dx-dBN">
                                                 <rect key="frame" x="0.0" y="84" width="297" height="34.333333333333343"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Log in"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Log in">
+                                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="cRl-ci-Hav" kind="presentation" modalPresentationStyle="fullScreen" id="5FZ-LZ-Bdd"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -68,7 +73,66 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="101.5267175572519" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="102" y="4"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="Mmw-yR-4eF">
+            <objects>
+                <viewController id="cRl-ci-Hav" customClass="WelcomeViewController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VmW-RI-XER">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="aM9-XR-jrm">
+                                <rect key="frame" x="20" y="132.66666666666669" width="353" height="160.66666666666669"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, User!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1lC-vR-bQB">
+                                        <rect key="frame" x="62.666666666666686" y="0.0" width="228" height="40.666666666666664"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="n9v-Pc-KTF">
+                                        <rect key="frame" x="140.66666666666666" y="80.666666666666686" width="72" height="80"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="👋🏻">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="72" name=".AppleColorEmojiUI"/>
+                                                    <font key="NSOriginalFont" metaFont="smallSystem"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QsF-iZ-dBF">
+                                <rect key="frame" x="148.66666666666666" y="690" width="96" height="40.333333333333371"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="96" id="tdu-PU-b1Q"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log out">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle2"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nxG-9o-vi1"/>
+                        <color key="backgroundColor" red="0.87142844556446419" green="0.66860278833160558" blue="0.88330078125" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="QsF-iZ-dBF" firstAttribute="centerY" secondItem="VmW-RI-XER" secondAttribute="centerY" multiplier="5:3" id="I1h-4o-2sO"/>
+                            <constraint firstItem="QsF-iZ-dBF" firstAttribute="centerX" secondItem="VmW-RI-XER" secondAttribute="centerX" id="hwL-Us-yFj"/>
+                            <constraint firstItem="aM9-XR-jrm" firstAttribute="leading" secondItem="nxG-9o-vi1" secondAttribute="leading" constant="20" id="oxq-jK-dg5"/>
+                            <constraint firstItem="aM9-XR-jrm" firstAttribute="centerY" secondItem="VmW-RI-XER" secondAttribute="centerY" multiplier="0.5" id="uz7-VU-ptB"/>
+                            <constraint firstItem="nxG-9o-vi1" firstAttribute="trailing" secondItem="aM9-XR-jrm" secondAttribute="trailing" constant="20" id="vvN-n8-ur9"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ES6-vu-Vlb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="823.66412213740455" y="3.5211267605633805"/>
         </scene>
     </scenes>
 </document>
