@@ -7,15 +7,16 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
-
+final class LoginViewController: UIViewController {
+    // MARK: - IB Outlets
     @IBOutlet var userNameTextField: UITextField?
     @IBOutlet var passwordTextField: UITextField?
     
+    // MARK: - Private Properties
     private let myUserName = "Cemen"
     private let myPassword = "12345"
     
-    
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let welcomeVC = segue.destination as? WelcomeViewController
         welcomeVC?.greeting = "Welcom, \(userNameTextField?.text ?? "")!"
@@ -38,7 +39,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    
+    // MARK: - IB Actions
     @IBAction func forgotUserNameButtonTapped() {
         showAlert(withTitel: "User name", andMessage: "Cemen")
     }
@@ -51,7 +52,8 @@ class LoginViewController: UIViewController {
         userNameTextField?.text = ""
         passwordTextField?.text = ""
     }
-
+    
+    // MARK: - Private Methods
     private func showAlert(withTitel titel: String, andMessage message: String) {
         let alert = UIAlertController(
             title: titel,

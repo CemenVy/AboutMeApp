@@ -7,16 +7,16 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
-
+final class WelcomeViewController: UIViewController {
+    // MARK: - IB Outlets
     @IBOutlet var greetinglabelTF: UILabel?
     
+    // MARK: - Public Properties
     var greeting: String!
     
+    // MARK: - View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         greetinglabelTF?.text = greeting
     }
-    
 }
