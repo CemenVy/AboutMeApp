@@ -33,7 +33,7 @@ final class LoginViewController: UIViewController {
         }
         
         if userNameTextField?.text == userName,
-            passwordTextField?.text == userPassword {
+           passwordTextField?.text == userPassword {
             return true
         } else {
             showAlert(
@@ -68,10 +68,10 @@ final class LoginViewController: UIViewController {
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             self.passwordTextField?.text = ""
         }
-      
+        
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
-
+    
 }
 
