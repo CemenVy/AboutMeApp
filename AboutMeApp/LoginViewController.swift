@@ -44,6 +44,12 @@ final class LoginViewController: UIViewController {
         }
     }
     
+    // MARK: - Touch Handling
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            super.touchesBegan(touches, with: event)
+            view.endEditing(true)
+        }
+    
     // MARK: - IB Actions
     @IBAction func forgotUserNameButtonTapped() {
         showAlert(withTitle: "User name", andMessage: "Cemen")

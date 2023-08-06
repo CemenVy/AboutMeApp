@@ -94,7 +94,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="aM9-XR-jrm">
-                                <rect key="frame" x="20" y="132.66666666666669" width="353" height="160.66666666666669"/>
+                                <rect key="frame" x="20" y="129.66666666666669" width="353" height="166.66666666666669"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, User!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1lC-vR-bQB">
                                         <rect key="frame" x="62.666666666666686" y="0.0" width="228" height="40.666666666666664"/>
@@ -103,12 +103,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="n9v-Pc-KTF">
-                                        <rect key="frame" x="140.66666666666666" y="80.666666666666686" width="72" height="80"/>
+                                        <rect key="frame" x="138" y="80.666666666666686" width="77" height="86"/>
                                         <attributedString key="attributedText">
                                             <fragment content="👋🏻">
                                                 <attributes>
                                                     <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" size="72" name=".AppleColorEmojiUI"/>
+                                                    <font key="NSFont" metaFont="system" size="72"/>
                                                     <font key="NSOriginalFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
