@@ -44,10 +44,10 @@ final class ResumeViewController: UIViewController {
         super.viewDidLoad()
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         
-        avatarImage?.image = avatar
-        avatarImage?.layer.cornerRadius = (avatarImage?.frame.size.width ?? 0) / 2
+        avatarImage?.layer.cornerRadius = (avatarImage?.frame.width ?? 0) / 2
         avatarImage?.clipsToBounds = true
-        
+        avatarImage?.image = avatar
+      
         nameLabel?.text = "Имя: \(name)"
         surnameLabel?.text = "Фамилия: \(surname)"
         ageLabel?.text = "Возраст: \(age)"
