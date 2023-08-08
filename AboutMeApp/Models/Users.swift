@@ -29,7 +29,7 @@ struct User {
                 подумал что это просто эмоциональный порыв и вернул деньги, но уже в июне я вновь вернулся к вам
                 и вот уже на втором модуле.
                 """,
-                avatar: UIImage(named: "avatar")
+                avatar: UIImage(named: "avatarUser")
             )
         )
     }
