@@ -16,6 +16,8 @@
 		60103EE42A7CFA5100EFDCA2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60103EE32A7CFA5100EFDCA2 /* WelcomeViewController.swift */; };
 		609C18392A8239F2002ADBB5 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609C18382A8239F2002ADBB5 /* Users.swift */; };
 		609C183E2A825445002ADBB5 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609C183D2A825445002ADBB5 /* Media.xcassets */; };
+		609C18402A827044002ADBB5 /* ResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609C183F2A827044002ADBB5 /* ResumeViewController.swift */; };
+		609C18422A82705D002ADBB5 /* BioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609C18412A82705D002ADBB5 /* BioViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		60103EE32A7CFA5100EFDCA2 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		609C18382A8239F2002ADBB5 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		609C183D2A825445002ADBB5 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		609C183F2A827044002ADBB5 /* ResumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeViewController.swift; sourceTree = "<group>"; };
+		609C18412A82705D002ADBB5 /* BioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 			children = (
 				60103ED32A7CCA6A00EFDCA2 /* LoginViewController.swift */,
 				60103EE32A7CFA5100EFDCA2 /* WelcomeViewController.swift */,
+				609C183F2A827044002ADBB5 /* ResumeViewController.swift */,
+				609C18412A82705D002ADBB5 /* BioViewController.swift */,
 			);
 			path = ViewControlles;
 			sourceTree = "<group>";
@@ -189,8 +195,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				60103ED42A7CCA6A00EFDCA2 /* LoginViewController.swift in Sources */,
+				609C18402A827044002ADBB5 /* ResumeViewController.swift in Sources */,
 				60103ED02A7CCA6A00EFDCA2 /* AppDelegate.swift in Sources */,
 				609C18392A8239F2002ADBB5 /* Users.swift in Sources */,
+				609C18422A82705D002ADBB5 /* BioViewController.swift in Sources */,
 				60103ED22A7CCA6A00EFDCA2 /* SceneDelegate.swift in Sources */,
 				60103EE42A7CFA5100EFDCA2 /* WelcomeViewController.swift in Sources */,
 			);

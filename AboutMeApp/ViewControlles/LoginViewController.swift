@@ -28,9 +28,14 @@ final class LoginViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.guestName = "Aleksey"
-        welcomeVC.personFullName = user?.person.fullName ?? ""
+        let tabBarController = segue.destination as? UITabBarController
+        tabBarController?.viewControllers?.forEach{ viewController in
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.guestName = "Aleksey"
+                welcomeVC.personFullName = user?.person.fullName ?? ""
+            }
+        }
+  
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String,sender: Any?) -> Bool {
