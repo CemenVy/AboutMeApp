@@ -43,8 +43,8 @@ struct Person {
     let resume: String
     let avatar: UIImage?
     
-    var fullname: String {
-        return "\(name) + \(surname)"
+    var fullName: String {
+        return "\(name) \(surname)"
     }
 }
 

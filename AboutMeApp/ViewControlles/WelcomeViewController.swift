@@ -10,21 +10,23 @@ import UIKit
 final class WelcomeViewController: UIViewController {
     // MARK: - IB Outlets
     @IBOutlet var greetingLabelTF: UILabel?
+    @IBOutlet var introduceLabelTF: UILabel?
     
     // MARK: - Public Properties
-    var user = ""
+    var guestName = ""
+    var personFullName = ""
     
     // MARK: - Private Properties
     private let primaryColor = UIColor(
-        red: 128/255,
-        green: 0/255,
-        blue: 128/255,
+        red: 252/255,
+        green: 175/255,
+        blue: 69/255,
         alpha: 1
     )
     private let secondaryColor = UIColor(
-        red: 255/255,
-        green: 165/255,
-        blue: 0/255,
+        red: 131/255,
+        green: 58/255,
+        blue: 180/255,
         alpha: 1
     )
     
@@ -32,7 +34,8 @@ final class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
-        greetingLabelTF?.text = "Welcome, \(user)!"
+        greetingLabelTF?.text = "Welcome, \(guestName)!"
+        introduceLabelTF?.text = "My name is \(personFullName)"
     }
 }
 

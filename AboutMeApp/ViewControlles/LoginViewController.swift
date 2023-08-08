@@ -9,11 +9,12 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     // MARK: - IB Outlets
-    @IBOutlet var userNameTextField: UITextField!
-    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var userNameTextField: UITextField?
+    @IBOutlet var passwordTextField: UITextField?
     
     // MARK: - Private Properties
-    private var user: User!
+    private var user: User?
+    private var fullName: String?
 
     // MARK: - View Life Cycles
     override func viewDidLoad() {
@@ -21,18 +22,19 @@ final class LoginViewController: UIViewController {
         
         user = User.getUser()
     
-        userNameTextField.text = user.login
-        passwordTextField.text = user.password
+        userNameTextField?.text = user?.login
+        passwordTextField?.text = user?.password
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.user = user.login
+        welcomeVC.guestName = "Aleksey"
+        welcomeVC.personFullName = user?.person.fullName ?? ""
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String,sender: Any?) -> Bool {
-        guard userNameTextField.text == user.login,passwordTextField.text == user.password else {
+        guard userNameTextField?.text == user?.login,passwordTextField?.text == user?.password else {
             showAlert(
                 withTitle: "Attention!",
                 andMessage: "Your login or password is invalid."
@@ -51,8 +53,8 @@ final class LoginViewController: UIViewController {
     // MARK: - IB Actions
     @IBAction func forgotRegisterData(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(withTitle: "User name", andMessage: "\(user.login)")
-        : showAlert(withTitle: "Password", andMessage: "\(user.password)")
+        ? showAlert(withTitle: "User name", andMessage: "\(user?.login ?? "")")
+        : showAlert(withTitle: "Password", andMessage: "\(user?.password ?? "")")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
