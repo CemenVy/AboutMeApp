@@ -224,6 +224,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ageLabel" destination="g38-er-Dww" id="279-e4-YF4"/>
+                        <outlet property="avatarImage" destination="V23-h7-zzw" id="95I-ly-3dC"/>
+                        <outlet property="nameLabel" destination="B0K-z4-8pF" id="u9G-qk-ido"/>
+                        <outlet property="nationalityLabel" destination="2BH-ve-wRx" id="TTw-Vs-Pp6"/>
+                        <outlet property="surnameLabel" destination="Mn1-wP-zvE" id="OhH-bt-bzv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hh-te-1Go" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -232,12 +239,12 @@
         <!--Семен Выдрин-->
         <scene sceneID="seY-qR-7ag">
             <objects>
-                <viewController id="yWy-o7-rWF" sceneMemberID="viewController">
+                <viewController id="yWy-o7-rWF" customClass="BioViewController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yEU-A3-b1i">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Nq-8a-BKo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Nq-8a-BKo">
                                 <rect key="frame" x="16" y="112.5" width="288" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -253,6 +260,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Семен Выдрин" id="sXK-dX-Ezp"/>
+                    <connections>
+                        <outlet property="resumeLabel" destination="3Nq-8a-BKo" id="ChH-iU-J0y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzQ-OF-Qwf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -264,6 +274,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="K4A-we-G7V" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zOk-Ht-pY4">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.94635813224195231" green="0.94635813224195231" blue="0.94635813224195231" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" name="AccentColor"/>
@@ -284,7 +295,7 @@
                     <tabBarItem key="tabBarItem" title="Cemen Vydrin" image="person.fill" catalog="system" id="eqk-Xj-ot1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="gA6-qI-2Kx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -298,7 +309,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="avatarUser" width="2556" height="2556"/>
+        <image name="avatarUser" width="236" height="173"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

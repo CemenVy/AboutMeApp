@@ -14,14 +14,21 @@ final class LoginViewController: UIViewController {
     
     // MARK: - Private Properties
     private var user: User?
+    private var name: String?
+    private var surname: String?
     private var fullName: String?
-
+    private var age: Int?
+    private var nationality: String?
+    
+    private var avatarUser: UIImage?
+    
+    
     // MARK: - View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
         user = User.getUser()
-    
+        
         userNameTextField?.text = user?.login
         passwordTextField?.text = user?.password
     }
@@ -33,11 +40,18 @@ final class LoginViewController: UIViewController {
             if let welcomeVC = viewController as? WelcomeViewController {
                 welcomeVC.guestName = "Aleksey"
                 welcomeVC.personFullName = user?.person.fullName ?? ""
+            } else if let navigationVC = viewController as? UINavigationController {
+                let resumeVS = navigationVC.topViewController as? ResumeViewController
+                resumeVS?.name = user?.person.name ?? ""
+                resumeVS?.surname = user?.person.surname ?? ""
+                resumeVS?.age = String(user?.person.age ?? 0)
+                resumeVS?.nationality = user?.person.nationality ?? ""
+                resumeVS?.resume = user?.person.resume ?? ""
+                resumeVS?.avatar = user?.person.avatar
             }
         }
-  
     }
-    
+
     override func shouldPerformSegue(withIdentifier identifier: String,sender: Any?) -> Bool {
         guard userNameTextField?.text == user?.login,passwordTextField?.text == user?.password else {
             showAlert(
