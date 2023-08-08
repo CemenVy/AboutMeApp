@@ -13,25 +13,26 @@ final class LoginViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     
     // MARK: - Private Properties
-    private let userName = "Cemen"
-    private let userPassword = "12345"
-    
+    private var user: User!
+
     // MARK: - View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userNameTextField.text = userName
-        passwordTextField.text = userPassword
+        user = User.getUser()
+    
+        userNameTextField.text = user.login
+        passwordTextField.text = user.password
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.user = userName
+        welcomeVC.user = user.login
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String,sender: Any?) -> Bool {
-        guard userNameTextField.text == userName,passwordTextField.text == userPassword else {
+        guard userNameTextField.text == user.login,passwordTextField.text == user.password else {
             showAlert(
                 withTitle: "Attention!",
                 andMessage: "Your login or password is invalid."
@@ -50,8 +51,8 @@ final class LoginViewController: UIViewController {
     // MARK: - IB Actions
     @IBAction func forgotRegisterData(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(withTitle: "User name", andMessage: "\(userName)")
-        : showAlert(withTitle: "Password", andMessage: "\(userPassword)")
+        ? showAlert(withTitle: "User name", andMessage: "\(user.login)")
+        : showAlert(withTitle: "Password", andMessage: "\(user.password)")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
