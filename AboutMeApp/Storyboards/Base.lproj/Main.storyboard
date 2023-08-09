@@ -253,8 +253,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Nq-8a-BKo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Nq-8a-BKo">
                                 <rect key="frame" x="16" y="116" width="361" height="667"/>
+                                <mutableString key="text">Всю свою жизнь я считал себя гуманитарием и даже не задумывался о мире IT. Моя деятельность была связана с продажами, организацией мероприятий для ведущих мировых брендов. Однако в 2023 году я осознал, что желаю перемен и решил сменить направление.
+В настоящее время я погружен в изучение новой профессии – iOS-разработчика. Этот выбор необычен для меня, учитывая мои предыдущие интересы и занятия. Перейти на путь разработки приложений для iOS стало для меня решением, принятым с большим энтузиазмом. Интересно, что мой первый опыт обучения начался в апреле, когда я приобрел курс от SwiftBook. Однако, мои сомнения переиграли меня, и я решил вернуть деньги за курс. Тем не менее, уже в июне я понял, что это истинное стремление, и снова обратился к обучению. Сейчас я нахожусь на втором модуле, и это увлекательное путешествие продолжается.
+</mutableString>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
