@@ -13,36 +13,18 @@ final class LoginViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField?
     
     // MARK: - Private Properties
-    private var user: User?
-    private var name: String?
-    private var surname: String?
-    private var fullName: String?
-    private var age: Int?
-    private var nationality: String?
-    
-    private var avatarUser: UIImage?
-    
-    private let primaryColor = UIColor(
-        red: 252/255,
-        green: 175/255,
-        blue: 69/255,
-        alpha: 1
-    )
-    private let secondaryColor = UIColor(
-        red: 131/255,
-        green: 58/255,
-        blue: 180/255,
-        alpha: 1
-    )
+    private var user = User.getUser()
     
     // MARK: - View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
-        user = User.getUser()
+        view.addVerticalGradientLayer(
+            topColor: AppStyles.primaryColor,
+            bottomColor: AppStyles.secondaryColor
+        )
         
-        userNameTextField?.text = user?.login
-        passwordTextField?.text = user?.password
+        userNameTextField?.text = user.login
+        passwordTextField?.text = user.password
     }
     
     // MARK: - Navigation
@@ -51,21 +33,21 @@ final class LoginViewController: UIViewController {
         tabBarController?.viewControllers?.forEach{ viewController in
             if let welcomeVC = viewController as? WelcomeViewController {
                 welcomeVC.guestName = "Алексей"
-                welcomeVC.personFullName = user?.person.fullName ?? ""
+                welcomeVC.personFullName = user.person.fullName
             } else if let navigationVC = viewController as? UINavigationController {
                 let resumeVS = navigationVC.topViewController as? ResumeViewController
-                resumeVS?.name = user?.person.name ?? ""
-                resumeVS?.surname = user?.person.surname ?? ""
-                resumeVS?.age = String(user?.person.age ?? 0)
-                resumeVS?.nationality = user?.person.nationality ?? ""
-                resumeVS?.resume = user?.person.resume ?? ""
-                resumeVS?.avatar = user?.person.avatar
+                resumeVS?.name = user.person.name
+                resumeVS?.surname = user.person.surname
+                resumeVS?.age = String(user.person.age)
+                resumeVS?.nationality = user.person.nationality
+                resumeVS?.resume = user.person.resume
+                resumeVS?.avatar = user.person.avatar
             }
         }
     }
-
+    
     override func shouldPerformSegue(withIdentifier identifier: String,sender: Any?) -> Bool {
-        guard userNameTextField?.text == user?.login,passwordTextField?.text == user?.password else {
+        guard userNameTextField?.text == user.login,passwordTextField?.text == user.password else {
             showAlert(
                 withTitle: "Attention!",
                 andMessage: "Your login or password is invalid."
@@ -84,8 +66,8 @@ final class LoginViewController: UIViewController {
     // MARK: - IB Actions
     @IBAction func forgotRegisterData(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(withTitle: "User name", andMessage: "\(user?.login ?? "")")
-        : showAlert(withTitle: "Password", andMessage: "\(user?.password ?? "")")
+        ? showAlert(withTitle: "User name", andMessage: "\(user.login)")
+        : showAlert(withTitle: "Password", andMessage: "\(user.password)")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
