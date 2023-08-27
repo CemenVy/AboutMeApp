@@ -9,8 +9,8 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     // MARK: - IB Outlets
-    @IBOutlet var userNameTextField: UITextField?
-    @IBOutlet var passwordTextField: UITextField?
+    @IBOutlet var userNameTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
     
     // MARK: - Private Properties
     private var user = User.getUser()
@@ -18,36 +18,22 @@ final class LoginViewController: UIViewController {
     // MARK: - View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addVerticalGradientLayer(
-            topColor: AppStyles.primaryColor,
-            bottomColor: AppStyles.secondaryColor
-        )
-        
         userNameTextField?.text = user.login
         passwordTextField?.text = user.password
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let tabBarController = segue.destination as? UITabBarController
-        tabBarController?.viewControllers?.forEach{ viewController in
-            if let welcomeVC = viewController as? WelcomeViewController {
-                welcomeVC.guestName = "Алексей"
-                welcomeVC.personFullName = user.person.fullName
-            } else if let navigationVC = viewController as? UINavigationController {
-                let resumeVS = navigationVC.topViewController as? ResumeViewController
-                resumeVS?.name = user.person.name
-                resumeVS?.surname = user.person.surname
-                resumeVS?.age = String(user.person.age)
-                resumeVS?.nationality = user.person.nationality
-                resumeVS?.resume = user.person.resume
-                resumeVS?.avatar = user.person.avatar
-            }
+        guard let tabBarController = segue.destination as? TabBarController else {
+          return
         }
+        tabBarController.user = user
     }
     
+    
     override func shouldPerformSegue(withIdentifier identifier: String,sender: Any?) -> Bool {
-        guard userNameTextField?.text == user.login,passwordTextField?.text == user.password else {
+        guard userNameTextField?.text == user.login,
+              passwordTextField?.text == user.password else {
             showAlert(
                 withTitle: "Attention!",
                 andMessage: "Your login or password is invalid."
@@ -85,16 +71,4 @@ final class LoginViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-}
-// MARK: - Set background color
-extension UIView {
-    func addVerticalGradientLayer(topColor: UIColor, bottomColor: UIColor) {
-        let gradient = CAGradientLayer()
-        gradient.frame = bounds
-        gradient.colors = [topColor.cgColor, bottomColor.cgColor]
-        gradient.locations = [0.0, 1.0]
-        gradient.startPoint = CGPoint(x: 0, y: 0)
-        gradient.endPoint = CGPoint(x: 0, y: 1)
-        layer.insertSublayer(gradient, at: 0)
-    }
 }

@@ -9,23 +9,19 @@ import UIKit
 
 final class WelcomeViewController: UIViewController {
     // MARK: - IB Outlets
-    @IBOutlet var greetingLabelTF: UILabel?
-    @IBOutlet var introduceLabelTF: UILabel?
+    @IBOutlet var greetingLabelTF: UILabel!
+    @IBOutlet var introduceLabelTF: UILabel!
     
     // MARK: - Public Properties
-    var guestName = ""
-    var personFullName = ""
+    var user: User!
     
     // MARK: - View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addVerticalGradientLayer(
-            topColor: AppStyles.primaryColor,
-            bottomColor: AppStyles.secondaryColor
-        )
+        view.addVerticalGradientLayer()
         
-        greetingLabelTF?.text = "Добро пожаловать, \(guestName)!"
-        introduceLabelTF?.text = "Меня зовут \(personFullName)."
+        greetingLabelTF.text = "Добро пожаловать, \(user.login)!"
+        introduceLabelTF.text = "Меня зовут \(user.person.fullName)."
     }
 }
 

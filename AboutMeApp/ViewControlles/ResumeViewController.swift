@@ -10,43 +10,37 @@ import UIKit
 final class ResumeViewController: UIViewController {
     
     // MARK: - IB Outlets
-    @IBOutlet var avatarImage: UIImageView?
+    @IBOutlet var photoImage: UIImageView! {
+        didSet {
+            photoImage.layer.cornerRadius = photoImage.frame.height / 2
+        }
+    }
     
-    @IBOutlet var nameLabel: UILabel?
-    @IBOutlet var surnameLabel: UILabel?
-    @IBOutlet var ageLabel: UILabel?
-    @IBOutlet var nationalityLabel: UILabel?
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var surnameLabel: UILabel!
+    @IBOutlet var ageLabel: UILabel!
+    @IBOutlet var nationalityLabel: UILabel!
     
     // MARK: - Public Properties
-    var name = ""
-    var surname = ""
-    var age = ""
-    var nationality = ""
-    var resume = ""
-    var avatar: UIImage?
+    var user: User!
     
     // MARK: - View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addVerticalGradientLayer(
-            topColor: AppStyles.primaryColor,
-            bottomColor: AppStyles.secondaryColor
-        )
+        view.addVerticalGradientLayer()
         
-        avatarImage?.image = avatar
-        avatarImage?.layer.cornerRadius = (avatarImage?.frame.width ?? 0) / 2
-        avatarImage?.clipsToBounds = true
-      
-        nameLabel?.text = "Имя: \(name)"
-        surnameLabel?.text = "Фамилия: \(surname)"
-        ageLabel?.text = "Возраст: \(age)"
-        nationalityLabel?.text = "Национальность: \(nationality)"
+        photoImage.image = UIImage(named: user.person.photo)
+        title = user.person.fullName
+        nameLabel.text = "Имя: \(user.person.name)"
+        surnameLabel.text = "Фамилия: \(user.person.surname)"
+        ageLabel.text = "Возраст: \(user.person.age)"
+        nationalityLabel.text = "Национальность: \(user.person.nationality)"
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let bioVC = segue.destination as? BioViewController
-        bioVC?.resume = resume
+        bioVC?.user = user
     }
     
 }

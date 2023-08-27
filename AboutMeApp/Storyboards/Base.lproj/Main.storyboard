@@ -165,7 +165,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ES6-vu-Vlb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="gtD-Vw-5Ft" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="823" y="782"/>
+            <point key="canvasLocation" x="368" y="802"/>
         </scene>
         <!--Семен Выдрин-->
         <scene sceneID="xI1-Kq-Nos">
@@ -204,7 +204,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatarUser" translatesAutoresizingMaskIntoConstraints="NO" id="V23-h7-zzw">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V23-h7-zzw">
                                 <rect key="frame" x="85" y="112.5" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="V23-h7-zzw" secondAttribute="height" multiplier="1:1" id="Kbt-42-DhW"/>
@@ -235,15 +235,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ageLabel" destination="g38-er-Dww" id="279-e4-YF4"/>
-                        <outlet property="avatarImage" destination="V23-h7-zzw" id="95I-ly-3dC"/>
                         <outlet property="nameLabel" destination="B0K-z4-8pF" id="u9G-qk-ido"/>
                         <outlet property="nationalityLabel" destination="2BH-ve-wRx" id="TTw-Vs-Pp6"/>
+                        <outlet property="photoImage" destination="V23-h7-zzw" id="URW-UP-vGF"/>
                         <outlet property="surnameLabel" destination="Mn1-wP-zvE" id="OhH-bt-bzv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hh-te-1Go" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2351.25" y="781.69014084507046"/>
+            <point key="canvasLocation" x="1993" y="802"/>
         </scene>
         <!--Семен Выдрин-->
         <scene sceneID="seY-qR-7ag">
@@ -279,12 +279,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzQ-OF-Qwf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3105" y="782"/>
+            <point key="canvasLocation" x="2775" y="802"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ZG2-9T-Lpf">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="K4A-we-G7V" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="K4A-we-G7V" customClass="TabBarController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zOk-Ht-pY4">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -299,7 +299,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tR6-DH-xus" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="823.66412213740455" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="893" y="3"/>
         </scene>
         <!--Cemen Vydrin-->
         <scene sceneID="J0j-s7-quR">
@@ -321,11 +321,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9b-PG-hSc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1605" y="781.69014084507046"/>
+            <point key="canvasLocation" x="1213" y="802"/>
         </scene>
     </scenes>
     <resources>
-        <image name="avatarUser" width="236" height="173"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

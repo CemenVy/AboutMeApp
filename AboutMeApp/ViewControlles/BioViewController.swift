@@ -10,20 +10,16 @@ import UIKit
 final class BioViewController: UIViewController {
     
     // MARK: - IB Outlets
-    @IBOutlet var resumeLabel: UILabel?
+    @IBOutlet var resumeLabel: UILabel!
     
     // MARK: - Public Properties
-    var resume = ""
+    var user:User!
     
     // MARK: - View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addVerticalGradientLayer(
-            topColor: AppStyles.primaryColor,
-            bottomColor: AppStyles.secondaryColor
-        )
-        
-        resumeLabel?.text = resume
+        view.addVerticalGradientLayer()
+        resumeLabel.text = user.person.resume
     }
 
 }
